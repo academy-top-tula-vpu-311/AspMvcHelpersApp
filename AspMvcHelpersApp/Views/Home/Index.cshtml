@@ -1,0 +1,67 @@
+﻿@using AspMvcHelpersApp.Helpers
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<style>
+    .red-text{
+        color: red;
+    }
+</style>
+
+
+<h1>Cities</h1>
+@Html.CreateList((string[])Model.Cities)
+
+<h1>Users</h1>
+@Html.CreateList((string[])Model.Users)
+
+@using(Html.BeginForm("Create", "Home", FormMethod.Post))
+{
+    <div>
+        @Html.Label("Name", "Input Name")
+        @Html.TextBox("Name")
+    </div>
+    
+    <div>
+        @Html.Label("Age", "Input Age")
+        @Html.TextBox("Age", "", new { type="number" })
+    </div>
+
+    <div>
+        @Html.Label("Password", "Input Password")
+        @Html.Password("Password")
+    </div>
+
+    <div>
+        @Html.Label("Gender", "Select Gender")
+        <br />
+        @Html.RadioButton("Gender", "Male", true)
+        <span>Male</span><br />
+        @Html.RadioButton("Gender", "Female")
+        <span>Female</span><br />
+    </div>
+
+    <div>
+        @Html.Label("Languages", "Select Languages")
+        <br />
+        @Html.CheckBox("Russian", true)
+        <span>Russian</span><br />
+        @Html.CheckBox("English", false)
+        <span>English</span><br />
+        @Html.CheckBox("Deutch", true)
+        <span>Deutch</span><br />
+    </div>
+
+    <div>
+        @Html.Label("City", "Select City")
+        @Html.DropDownList("City", new SelectList((string[])Model.Cities))
+    </div>
+
+    <div>
+        @Html.Label("City", "Select Cities")
+        @Html.ListBox("City", new SelectList((string[])Model.Cities))
+    </div>
+
+}

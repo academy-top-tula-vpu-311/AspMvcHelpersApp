@@ -1,0 +1,36 @@
+﻿@model AspMvcHelpersApp.Models.User
+@{
+}
+
+
+@using(Html.BeginForm("Create", "Home", FormMethod.Post))
+{
+    <div>
+        @Html.HiddenFor(m => m.Id)
+    </div>
+
+    <div>
+        @Html.LabelFor(m => m.Name, "Input Name")
+        @Html.TextBoxFor(m => m.Name)
+    </div>
+
+    <div>
+        @Html.LabelFor(m => m.Age, "Input Age")
+        @Html.TextBoxFor(m => m.Age, "", new {type="number"})
+    </div>
+
+    <div>
+        @Html.LabelFor(m => m.Gender, "Select Gender")<br />
+        @Html.RadioButtonFor(m => m.Gender, Gender.Male)
+        @Html.Label("", "Male") <br />
+        @Html.RadioButtonFor(m => m.Gender, Gender.Female)
+        @Html.Label("", "Female") <br />
+    </div>
+
+    <div>
+        @Html.LabelFor(m => m.Languages, "Select Languages")<br />
+        @Html.ListBoxFor(m => m.Languages, new SelectList(Model.Languages));
+    </div>
+
+    @Html.ActionLink("Create Page", "Create", "Product")
+}
