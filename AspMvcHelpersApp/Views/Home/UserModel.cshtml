@@ -1,0 +1,33 @@
+﻿@model AspMvcHelpersApp.Models.User
+
+<div>
+    <p>Id: @Html.Display("Id");</p>
+</div>
+
+<div>
+    <p>
+        Name:
+        @Html.DisplayFor(m => m.Name);
+    </p>
+</div>
+
+<div>
+    <p>
+        Age:
+        @Html.Display("Age");
+    </p>
+</div>
+
+<div>
+    <p>
+        Gender:
+        @Html.Display("Gender");
+    </p>
+</div>
+
+<div>
+    <p>
+        Languages:
+    @Html.Display("Languages");
+    </p>
+</div>

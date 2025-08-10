@@ -1,0 +1,24 @@
+﻿@model AspMvcHelpersApp.Models.User
+
+@using(Html.BeginForm("Create", "Home", FormMethod.Post))
+{
+    <div>
+        @Html.LabelFor(m => m.Name, "Name:")<br/>
+        @Html.Editor("Name")
+    </div>
+
+    <div>
+        @Html.LabelFor(m => m.Age, "Age:")<br />
+        @Html.Editor("Age")
+    </div>
+
+    <div>
+        @Html.LabelFor(m => m.Gender, "Gender:")<br />
+        @Html.Editor("Gender")
+    </div>
+
+    <div>
+        @Html.LabelFor(m => m.Languages, "Languages:")<br />
+        @Html.Editor("Languages")
+    </div>
+}

@@ -1,0 +1,21 @@
+﻿@model AspMvcHelpersApp.Models.User
+
+<form asp-action="Create" asp-controller="Home" asp-antiforgery="true">
+
+    <div>
+        <label asp-for="Name"></label>
+        <input type="text" asp-for="Name" />
+    </div>
+
+    <div>
+        <label asp-for="Age"></label>
+        <input type="number" asp-for="Age" />
+    </div>
+
+    
+    <div>
+        <label asp-for="Languages"></label>
+        <select asp-for="Languages" asp-items="ViewBag.Languages" />
+    </div>
+
+</form>
